@@ -37,8 +37,10 @@ export class DashboardComponent implements OnInit {
 
   selected: {
     groups: number[];
+    group: IGroup;
   } = {
-    groups: []
+    groups: [],
+    group: <any>{}
   };
 
   constructor(private grouService: GroupService) {
@@ -62,6 +64,7 @@ export class DashboardComponent implements OnInit {
 
   onGroupSelected(selectedGroups: number[]) {
     let selectedGroup: IGroup = this.map.groups[selectedGroups[0]];
+    this.selected.group = selectedGroup;
     this.grouService.getUsers(selectedGroup.Id).subscribe((response: IApiResponse<IGroupUser>) => {
       this.list.groupUsers = response.Data;
     });

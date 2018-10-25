@@ -16,6 +16,7 @@
       <!-- groups table -->
       <div fxFlex="column" class="overflow-auto mat-elevation-z3">
         <div class="group-table">
+          <h4 class="border p2 m-0">Group List</h4>
           <kendo-grid [data]="list.groups"
                       [kendoGridSelectBy]="'Id'"
                       [selectable]="selectableSettings.groups"
@@ -36,6 +37,9 @@
       <!-- selected group users -->
       <div fxFlex="column" class="overflow-auto mat-elevation-z3">
         <div class="group-users-table">
+          <h4 class="border p2 m-0">User List
+          <span *ngIf="selected.group && selected.group.Name">{{ 'Of ' + selected.group.Name }}</span>
+          </h4>
           <kendo-grid [data]="list.groupUsers" [kendoGridSelectBy]="'Id'">
             <kendo-grid-column field="Id" title="ID" width="40"></kendo-grid-column>
             <kendo-grid-column field="GroupId" title="Group Id"></kendo-grid-column>
