@@ -1,4 +1,4 @@
-# Kishan Test
+# Kendo UI Grid Sample
 
 ##### User below command to test
 `ng serve`
