@@ -1,0 +1,8 @@
+<h1 mat-dialog-title class="red-900-fg">{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>{{ data.text }}</p>
+</div>
+<div mat-dialog-actions fxFlex fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign="space-between">
+  <button mat-raised-button (click)="onNoClick()" [mat-dialog-close]="EDialogConfirm.NO" class="mat-white-bg">No</button>
+  <button mat-raised-button cdkFocusInitial [mat-dialog-close]="EDialogConfirm.YES" class="mat-white-bg">Yes</button>
+</div>

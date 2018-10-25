@@ -1,0 +1,54 @@
+<div class="page-layout simple fullwidth" fusePerfectScrollbar>
+  <!-- HEADER -->
+  <div class="header mat-accent-bg p-24" fxLayout="row" fxLayoutAlign="start center">
+    <h2 fxFlex="50%">
+      <mat-icon class="align-text-bottom">business</mat-icon>
+      Dashboard
+    </h2>
+
+    <div fxFlex="50%" class="text-right"></div>
+  </div>
+  <!-- / HEADER -->
+  <div class="content p3">
+
+    <div fxLayout="row" fxLayoutGap="2%" fxLayout.sm="column">
+
+      <!-- groups table -->
+      <div fxFlex="column" class="overflow-auto mat-elevation-z3">
+        <div class="group-table">
+          <kendo-grid [data]="list.groups"
+                      [kendoGridSelectBy]="'Id'"
+                      [selectable]="selectableSettings.groups"
+                      [selectedKeys]="selected.groups"
+                      (selectedKeysChange)="onGroupSelected($event)">
+            <kendo-grid-checkbox-column width="50"></kendo-grid-checkbox-column>
+            <kendo-grid-column field="Id" title="ID" width="40"></kendo-grid-column>
+            <kendo-grid-column width="200" field="Name" title="Name"></kendo-grid-column>
+            <kendo-grid-column field="isSystem" title="Is System"></kendo-grid-column>
+            <kendo-grid-column field="ParentGroupId" title="Parent GroupId"></kendo-grid-column>
+            <kendo-grid-column field="ParentGroupName" title="Parent Group Name"></kendo-grid-column>
+            <kendo-grid-column width="200" field="Department" title="Department"></kendo-grid-column>
+            <kendo-grid-column field="DepartmentId" title="Department Id"></kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+
+      <!-- selected group users -->
+      <div fxFlex="column" class="overflow-auto mat-elevation-z3">
+        <div class="group-users-table">
+          <kendo-grid [data]="list.groupUsers" [kendoGridSelectBy]="'Id'">
+            <kendo-grid-column field="Id" title="ID" width="40"></kendo-grid-column>
+            <kendo-grid-column field="GroupId" title="Group Id"></kendo-grid-column>
+            <kendo-grid-column width="200" field="GroupName" title="Group Name"></kendo-grid-column>
+            <kendo-grid-column field="UserId" title="User Id"></kendo-grid-column>
+            <kendo-grid-column width="200" field="UserName" title="User Name"></kendo-grid-column>
+            <kendo-grid-column field="isReadOnly" title="Is Read Only"></kendo-grid-column>
+            <kendo-grid-column field="isAdmin" title="Is Admin"></kendo-grid-column>
+          </kendo-grid>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

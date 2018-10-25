@@ -1,0 +1,13 @@
+<h1 mat-dialog-title class="accent-900-fg">{{data.title}}</h1>
+<div mat-dialog-content>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>{{ data.text }}</mat-label>
+      <input cdkFocusInitial matInput placeholder="{{ data.text }}" [(ngModel)]="input">
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions fxFlex fxLayout="row" fxLayoutAlign="center center" fxLayoutAlign="space-between">
+  <button mat-raised-button (click)="onNoClick()" [mat-dialog-close]="getCloseValue()" class="mat-white-bg">No</button>
+  <button mat-raised-button [mat-dialog-close]="getCloseValue()" class="mat-white-bg">Yes</button>
+</div>

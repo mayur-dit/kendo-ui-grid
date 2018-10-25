@@ -1,0 +1,28 @@
+<div id="login" fxLayout="column" fusePerfectScrollbar>
+  <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+    <div id="login-form" *fuseIfOnDom [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" style="position: relative;">
+      <small style="position: absolute; right:0; bottom:0; padding:5px;">{{ version }}</small>
+      <div class="logo">
+        <img src="assets/images/logos/fuse.svg">
+      </div>
+      <div class="title">LOGIN TO YOUR ACCOUNT</div>
+      <form name="loginForm" [formGroup]="loginForm" novalidate>
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="user_email">
+          <mat-error *ngIf="!loginFormErrors.user_email.required">
+            Username is required.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="user_password">
+          <mat-error *ngIf="loginFormErrors.user_password.required">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+        <button type="button" mat-raised-button color="accent" class="submit-button" aria-label="LOG IN" (click)="onLoginClick()" [disabled]="loginForm.invalid">
+          LOGIN
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

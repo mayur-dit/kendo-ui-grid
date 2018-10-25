@@ -1,0 +1,23 @@
+// Import Fuse core library
+@import "@fuse/scss/core";
+
+.page-layout.simple.fullwidth {
+  .header {
+    height: 82px !important;
+    min-height: 90px !important;
+    max-height: 120px;
+  }
+}
+
+.page-layout.simple.inner-sidenav {
+  .header {
+    height: 82px !important;
+    min-height: 90px !important;
+    max-height: 120px;
+  }
+}
+
+
+.font-size-xx-large {
+  font-size: xx-large !important;
+}
